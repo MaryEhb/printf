@@ -20,5 +20,5 @@ int print_string(va_list args)
 		_putchar(s[len]);
 		len++;
 	}
-	return (len);
+	return (len + 1);
 }
