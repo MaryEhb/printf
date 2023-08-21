@@ -12,6 +12,9 @@ int print_string(va_list args)
 	unsigned int len = 0;
 	char *s = va_arg(args, char *);
 
+	if (!s)
+		s = "(null)";
+
 	while (s && s[len])
 	{
 		_putchar(s[len]);
