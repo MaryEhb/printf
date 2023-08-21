@@ -9,13 +9,13 @@
 
 int print_string(va_list args)
 {
-        unsigned int len = 0;
-        char *s = va_arg(args, char *);
+	unsigned int len = 0;
+	char *s = va_arg(args, char *);
 
-        while (s && s[len])
-        {
-                _putchar(s[len]);
-                len++;
-        }
-        return (len);
+	while (s && s[len])
+	{
+		_putchar(s[len]);
+		len++;
+	}
+	return (len);
 }
