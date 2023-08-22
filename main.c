@@ -4,7 +4,7 @@
 #include <limits.h>
 #include <stdio.h>
 #include "main.h"
-
+#include <limits.h>
 int main ()
 {
     int len;
@@ -18,8 +18,8 @@ int main ()
     printf("Negative:[%d]\n", -762534);
     _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
-    len = _printf("\0");
-    /*len2 = printf("%c", '\0');*/
+    len = _printf("%d", INT_MIN);
+    len2 = printf("%d", INT_MIN);
     printf("\n%d\n%d\n", len, len2);
     return 0;
 

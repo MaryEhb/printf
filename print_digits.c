@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdbool.h>
+#include <limits.h>
 /**
  * print_digits - Placeholder for printing a decimal (integer).
  * @args: A va_list containing the arguments.
@@ -12,10 +13,18 @@ int print_digits(va_list args)
 	int n = va_arg(args, int);
 	bool isneg = 0;
 
-	if (n < 0)
+	if (n == 0)
 	{
+		_putchar('0');
+		return (1);
+	} else if (n < 0)
+	{
+		if (n == INT_MIN)
+			n = -(n + 1);
+		else
+			n = -n;
+
 		_putchar('-');
-		n = -n;
 		isneg = 1;
 	}
 
