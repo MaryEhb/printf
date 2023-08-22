@@ -26,10 +26,8 @@ int print_digits(va_list args)
 
 		_putchar('-');
 		isneg = 1;
-	} else if (!n)
-	{
-		return (_putchar('0'));
 	}
+
 	temp = n;
 	while (temp / 10)
 	{
