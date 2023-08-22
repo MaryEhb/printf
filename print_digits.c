@@ -41,10 +41,11 @@ int print_digits(va_list args)
 		i++;
 	}
 
+	temp = n;
 	while (divisor)
 	{
-		_putchar('0' + n / divisor);
-		n %=  divisor;
+		_putchar('0' + temp / divisor);
+		temp %=  divisor;
 		divisor /= 10;
 	}
 	return (!isneg ? numDigits : numDigits + 1);
