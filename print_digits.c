@@ -9,7 +9,7 @@
  */
 int print_digits(va_list args)
 {
-	int numDigits = 1, temp, i = 1, divisor = 1;
+	unsigned int numDigits = 1, temp, i = 1, divisor = 1;
 	int n = va_arg(args, int);
 	bool isneg = 0;
 
@@ -26,25 +26,25 @@ int print_digits(va_list args)
 
 		_putchar('-');
 		isneg = 1;
+	} else if (!n)
+	{
+		return (_putchar('0'));
 	}
-
 	temp = n;
 	while (temp / 10)
 	{
 		numDigits++;
 		temp /= 10;
 	}
-
 	while (i < numDigits)
 	{
 		divisor *= 10;
 		i++;
 	}
-
 	temp = n;
 	while (divisor)
 	{
-		_putchar('0' + temp / divisor);
+		_putchar('0' + (temp / divisor));
 		temp %=  divisor;
 		divisor /= 10;
 	}
