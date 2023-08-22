@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	specifier ss[] = {
 		{'c', print_char}, {'s', print_string}, {'d', print_digits},
 		{'i', print_digits}, {'%', print_percent}};
-	int count = 0, i = 0, j;
+	int unsigned count = 0, i = 0, j;
 	va_list args;
 
 	va_start(args, format);
@@ -35,15 +35,14 @@ int _printf(const char *format, ...)
 				}
 				j++;
 				if (j == 5)
-					_putchar('%');
+					count += _putchar('%');
 			}
 		} else
 		{
-			_putchar(format[i]);
-			count++;
+			count += _putchar(format[i]);
 		}
 		i++;
 	}
 	va_end(args);
-	return (format[i - 1] == '%' ? -1 : count);
+	return (count);
 }
